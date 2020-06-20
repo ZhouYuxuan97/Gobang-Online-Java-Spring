@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Websocket</title>
+</head>
+<body>
+Monitor List<br/>
+<div id="message">
+
+</div>
+</body>
+
+<script type="text/javascript">
+    var ws;
+    var lockReconnect = false;
+    var wsUrl = 'ws://localhost:8080/websocket'
+
+    createWebSocket(wsUrl);
+
+    function createWebSocket(url) {
+        setMessageInnerHTML("Create ws object--");
+        try {
+            ws = new WebSocket(url);
+            initEventHandle();
+        } catch (e) {
+            setMessageInnerHTML("Create ws object Failed.")
+            reconnect(url);
+        }
+    }
+
+    function initEventHandle() {
+        ws.onclose = function () {
+            setMessageInnerHTML("Connection closed.")
+            reconnect(wsUrl);
+        }
+
+        ws.onopen = function () {
+            setMessageInnerHTML("Build connection.");
+            heartCheck.reset().start();
+        }
+
+        ws.onmessage = function (event) {
+            setMessageInnerHTML(event.data);
+            //if receive any message, then reset heartbeat
+            heartCheck.reset().start();
+        }
+
+        ws.onerror = function () {
+            setMessageInnerHTML("Connection error, reconnet");
+            reconnect(wsUrl);
+        }
+    }
+
+    function reconnect(url) {
+        setMessageInnerHTML("re-connect...");
+        if (lockReconnect) return;
+        lockReconnect = true;
+        setTimeout(function () {
+            createWebSocket(url);
+            lockReconnect = false;
+        }, 2000);
+    }
+
+    function setMessageInnerHTML(innerHTML) {
+        document.getElementById('message').innerHTML += innerHTML + '</br>';
+    }
+
+    //heartbeat dective
+    var heartCheck = {
+        timeout: 6000,
+        timeoutObj: null,
+        reset: function () {
+            setMessageInnerHTML("receive message, functions work");
+            clearTimeout(this.timeoutObj);
+            return this;
+        },
+        start: function () {
+            this.timeoutObj = setTimeout(function () {
+                ws.send("HeartBeat");
+                setMessageInnerHTML("Send heartbeat");
+            }, this.timeout)
+        }
+    }
+
+</script>
+
+</html>
