@@ -9,7 +9,7 @@ Functions similar with [Gobang-OnlineV2](https://github.com/ZhouYuxuan97/gobang-
 3. View in-playing game<br>
 
 
-## Sample Page:
+## Sample Pages:
 ### Wait for another player
 ![Wait for another player](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/wait.png)<br><br>
 
