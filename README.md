@@ -10,8 +10,17 @@ Functions similar with [Gobang-OnlineV2](https://github.com/ZhouYuxuan97/gobang-
 
 
 ## Sample Page:
-![Wait for another player](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/wait.png)
-![Playing and watching game](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/in-game.png)
-![Restart game](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/restart.png)
-![Restart success](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/restartsuccess.png)
-![Someone win](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/win.png)
+Wait for another player
+![Wait for another player](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/wait.png)<br><br>
+
+Playing and watching game
+![Playing and watching game](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/in-game.png)<br><br>
+
+Restart game
+![Restart game](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/restart.png)<br><br>
+
+Restart success
+![Restart success](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/restartsuccess.png)<br><br>
+
+Someone win
+![Someone win](https://github.com/ZhouYuxuan97/ProjectImage/blob/master/Gobang-Online-Java/win.png)<br><br>
